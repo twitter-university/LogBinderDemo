@@ -13,7 +13,7 @@ public class LogService extends Service {
 	public void onCreate() {
 		Log.d(TAG, "onCreate()'d");
 		super.onCreate();
-		this.service = new ILogServiceImpl();
+		this.service = new ILogServiceImpl(super.getApplicationContext());
 	}
 
 	@Override

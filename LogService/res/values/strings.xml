@@ -2,5 +2,10 @@
 <resources>
 
     <string name="app_name">LogService</string>
+    <string name="log_permissions_group_label">Log Permissions</string>
+    <string name="use_log_service_permission_label">use log service</string>
+    <string name="use_log_service_permission_description">applications with this permissions get to log for free</string>
+    <string name="use_long_log_service_permission_label">use long log service operations</string>
+    <string name="use_long_log_service_permission_description">applications with this permissions can log super-long log messages</string>
 
 </resources>

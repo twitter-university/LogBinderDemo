@@ -6,8 +6,27 @@
 
     <uses-sdk android:minSdkVersion="15" />
 
+    <permission-group
+        android:name="com.marakana.android.logservice.LOG_PERMISSIONS"
+        android:label="@string/log_permissions_group_label" />
+
+    <permission
+        android:name="com.marakana.android.logservice.USE_LOG_SERVICE"
+        android:description="@string/use_log_service_permission_description"
+        android:label="@string/use_log_service_permission_label"
+        android:permissionGroup="com.marakana.android.logservice.LOG_PERMISSIONS"
+        android:protectionLevel="dangerous" />
+    <permission
+        android:name="com.marakana.android.logservice.USE_LONG_LOG_SERVICE"
+        android:description="@string/use_long_log_service_permission_description"
+        android:label="@string/use_long_log_service_permission_label"
+        android:permissionGroup="com.marakana.android.logservice.LOG_PERMISSIONS"
+        android:protectionLevel="dangerous" />
+
     <application>
-        <service android:name=".LogService" >
+        <service
+            android:name=".LogService"
+            android:permission="com.marakana.android.logservice.USE_LOG_SERVICE" >
             <intent-filter>
                 <action android:name="com.marakana.android.logcommon.ILogService" />
             </intent-filter>
