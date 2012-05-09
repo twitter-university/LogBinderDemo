@@ -9,7 +9,6 @@ public class LogMessage implements Parcelable {
 	private final String msg;
 
 	public LogMessage(int priority, String tag, String msg) {
-		super();
 		this.priority = priority;
 		this.tag = tag;
 		this.msg = msg;
