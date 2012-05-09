@@ -20,12 +20,18 @@ public class ILogServiceImpl extends ILogService.Stub {
 	@Override
 	public void log(LogMessage logMessage) throws RemoteException {
 		Log.d(TAG, "Logging message");
-		if (logMessage.getTag().length() > 10
-				|| logMessage.getMsg().length() > 80) {
-			this.context.enforceCallingPermission(
-					Manifest.permission.USE_LONG_LOG_SERVICE, "Go away!");
+		if (logMessage == null || logMessage.getTag() == null
+				|| logMessage.getMsg() == null) {
+			throw new NullPointerException(
+					"Log message, tag, and msg must not be null");
+		} else {
+			if (logMessage.getTag().length() > 10
+					|| logMessage.getMsg().length() > 80) {
+				this.context.enforceCallingPermission(
+						Manifest.permission.USE_LONG_LOG_SERVICE, "Go away!");
+			}
+			Log.println(logMessage.getPriority(), logMessage.getTag(),
+					logMessage.getMsg());
 		}
-		Log.println(logMessage.getPriority(), logMessage.getTag(),
-				logMessage.getMsg());
 	}
 }
