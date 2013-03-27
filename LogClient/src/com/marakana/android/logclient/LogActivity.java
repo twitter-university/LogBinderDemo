@@ -22,7 +22,7 @@ import com.marakana.android.logcommon.LogMessage;
 public class LogActivity extends Activity implements OnClickListener,
 		ServiceConnection {
 	private static final String TAG = "LogActivity";
-	private static final int[] LOG_LEVEL = { Log.VERBOSE, Log.DEBUG, Log.DEBUG,
+	private static final int[] LOG_LEVEL = { Log.VERBOSE, Log.DEBUG, Log.INFO,
 			Log.WARN, Log.ERROR };
 
 	private Spinner priority;
